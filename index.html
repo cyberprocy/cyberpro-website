@@ -677,7 +677,7 @@ gsap.registerPlugin(ScrollTrigger);
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55,1,0.1,200);
-  camera.position.z = 18;
+  camera.position.z = 14;
 
   // Lighting
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -697,23 +697,15 @@ gsap.registerPlugin(ScrollTrigger);
 
   // Model definitions: [file, scale, position, rotationSpeeds, color tint]
   const modelDefs = [
-    {file:'Shield.glb',          scale:0.7,  pos:[-4.5,  1.5, -1],  rot:[0.003,0.008,0.001]},
-    {file:'Shield_Celtic_Golden.glb', scale:0.6, pos:[3.5, 2.5, 0],  rot:[0.002,0.006,0.002]},
-    {file:'Stethoscope.glb',     scale:0.8,  pos:[-3.5, -2,  0.5], rot:[0.004,0.005,0.003]},
-    {file:'Dental_mirror.glb',   scale:0.8,  pos:[1.5, -2.5, -1],  rot:[0.006,0.004,0.005]},
-    {file:'Dentist_Chair.glb',   scale:0.3,  pos:[-1.5, 1.5, -2],  rot:[0.002,0.004,0.001]},
-    {file:'Laptop.glb',          scale:0.7,  pos:[4.5, -1.5,  0],  rot:[0.003,0.006,0.002]},
-    {file:'Computer.glb',        scale:0.5,  pos:[-5,   0,   -1],  rot:[0.002,0.005,0.003]},
-    {file:'Phone.glb',           scale:0.9,  pos:[0.5,  3,   -1],  rot:[0.005,0.007,0.002]},
-    {file:'Walkie_talkie.glb',   scale:0.7,  pos:[2.5, -3,    0],  rot:[0.006,0.004,0.003]},
-    {file:'Super_Robot__.glb',   scale:0.4,  pos:[-2.5, 2.5, -2],  rot:[0.002,0.005,0.001]},
-    {file:'Robot_Enemy.glb',     scale:0.45, pos:[5,    1,    0.5],rot:[0.003,0.007,0.002]},
-    {file:'Planet.glb',          scale:0.6,  pos:[-4,  -1.5,  0.5],rot:[0.001,0.003,0.001]},
-    {file:'Satellite.glb',       scale:0.45, pos:[1.5,  1.5, -2],  rot:[0.004,0.006,0.003]},
-    {file:'Spaceship.glb',       scale:0.4,  pos:[-1,  -3.5, -1],  rot:[0.003,0.005,0.004]},
-    {file:'Sword.glb',           scale:0.7,  pos:[3.5, -2.5,  0.5],rot:[0.005,0.003,0.006]},
-    {file:'Pickup_Health.glb',   scale:0.8,  pos:[-3,   3,    0],  rot:[0.006,0.005,0.003]},
-    {file:'Cyberpunk_Platform.glb',scale:0.4,pos:[0,    0,   -3],  rot:[0.001,0.003,0.001]},
+    {file:'Shield_Celtic_Golden.glb', scale:0.4, pos:[-4,  1.5, -1],  rot:[0.002,0.006,0.002]},
+    {file:'Stethoscope.glb',          scale:0.5, pos:[3.5, 2,    0],  rot:[0.004,0.005,0.003]},
+    {file:'Laptop.glb',               scale:0.4, pos:[-3, -2,    0.5],rot:[0.003,0.006,0.002]},
+    {file:'Phone.glb',                scale:0.5, pos:[4,  -1.5,  0],  rot:[0.005,0.007,0.002]},
+    {file:'Super_Robot__.glb',        scale:0.2, pos:[-1,  2,   -1.5],rot:[0.002,0.005,0.001]},
+    {file:'Satellite.glb',            scale:0.3, pos:[1.5, -2.5, -1], rot:[0.004,0.006,0.003]},
+    {file:'Spaceship.glb',            scale:0.25,pos:[-4.5,-1,   0.5],rot:[0.003,0.005,0.004]},
+    {file:'Pickup_Health.glb',        scale:0.5, pos:[0,   3,   -1],  rot:[0.006,0.005,0.003]},
+    {file:'Dental_mirror.glb',        scale:0.6, pos:[2.5, 1,    0.5],rot:[0.006,0.004,0.005]},
   ];
 
   const loadedObjects = [];
@@ -857,7 +849,7 @@ gsap.registerPlugin(ScrollTrigger);
       obj.position.x=obj.userData.basePos.x;
       obj.position.z=obj.userData.basePos.z;
 
-      if(Math.abs(obj.userData.basePos.x)>12) obj.userData.vx*=-1;
+      if(Math.abs(obj.userData.basePos.x)>7) obj.userData.vx*=-1;
       if(Math.abs(obj.userData.basePos.z)>4) obj.userData.vz*=-1;
     });
 
@@ -888,7 +880,7 @@ gsap.registerPlugin(ScrollTrigger);
   animate();
 
   window.addEventListener('scroll',()=>{
-    camera.position.z=18+window.scrollY*0.005;
+    camera.position.z=14+window.scrollY*0.004;
   });
 })();
 
